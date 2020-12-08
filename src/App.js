@@ -1,25 +1,38 @@
-import logo from './logo.svg';
+import "tailwindcss/tailwind.css"
 import './App.css';
+import Login from './Login';
+import {BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import ChatRoom from './ChatRoom';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <Router>
+    <div className="app">
+     
+     <Switch>
+       <Route path="/chatroom">
+        
+       <ChatRoom/>
+         
+      </Route>
+       
+       
+         
+      
+      {/* la ruta base o raiz siempre al final */}
+      <Route path="/">
+         
+        <Login />
+       </Route>
+     </Switch>
+    </div>
+   </Router>
+     {/*login */}
+     {/*chat */}
     </div>
   );
 }
 
+<Login />
 export default App;
